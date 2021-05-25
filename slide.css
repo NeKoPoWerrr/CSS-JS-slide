@@ -7,6 +7,7 @@
 img{
     width: 300px;
     height: 500px;
+    object-fit: cover;
 }
 .carousel-container{
     width: 300px;
@@ -20,6 +21,25 @@ img{
     display: flex;
     width: 100%;
     height: 500px;
+}
+
+.carousel-slide_1{
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin: auto;
+}
+.carousel-slide_1 > img{
+    position: absolute;
+    visibility: hidden;
+    display: block;
+}
+.carousel-slide_1 > img:nth-child(1){
+    position: static;
+}
+.carousel-slide_1 .show{
+    opacity: 1;
+    visibility: visible;
 }
 
 #prevBtn{
@@ -42,4 +62,43 @@ img{
     color: rgb(255, 255, 255);
     opacity: 0.5;
     cursor: pointer;
+}
+
+.prev, .next{
+display: block;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+transition: .4s;
+background-color: rgba(0,0,0,.12);
+padding: 14px 12px;
+}
+
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,.24);
+}
+.prev:after, .next:after{
+    display: block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+.prev{
+left: 0
+}
+.prev:after{
+    transform: rotate(-135deg);
+    margin-left: 4px;
+}
+.next{
+right: 0;
+}
+
+.next:after{
+    transform: rotate(45deg);
+    margin-right: 4px;
 }
